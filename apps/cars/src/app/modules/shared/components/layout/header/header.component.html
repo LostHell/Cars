@@ -6,9 +6,19 @@
           <span class="material-icons">menu</span>
         </button>
         <mat-menu #menu="matMenu">
-          <a href="#" class="text-decoration-none" mat-menu-item>Home</a>
-          <a href="#" class="text-decoration-none" mat-menu-item>Login</a>
-          <a href="#" class="text-decoration-none" mat-menu-item>Register</a>
+          <a routerLink="/" class="text-decoration-none" mat-menu-item>Home</a>
+          <a
+            (click)="openLoginDialog()"
+            class="text-decoration-none"
+            mat-menu-item
+            >Login</a
+          >
+          <a
+            (click)="openRegisterDialog()"
+            class="text-decoration-none"
+            mat-menu-item
+            >Register</a
+          >
           <a href="#" class="text-decoration-none" mat-menu-item>Make offer</a>
         </mat-menu>
       </li>
@@ -30,7 +40,7 @@
             >favorite_border</span
           ></a
         >
-        <a (click)="openDialog()" class="pl-2" mat-icon-button
+        <a (click)="openSearchDialog()" class="pl-2" mat-icon-button
           ><span class="material-icons">search</span></a
         >
       </li>

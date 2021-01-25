@@ -1,0 +1,38 @@
+<div mat-dialog-content>
+  <h4 class="text-center mb-3">Register Panel</h4>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="submitLoginData()"
+    class="d-flex flex-column align-items-center"
+  >
+    <app-reactive-input
+      [form]="form"
+      label="Name"
+      name="name"
+      type="text"
+      error="Full Name is required!"
+    ></app-reactive-input>
+    <app-reactive-input
+      [form]="form"
+      label="Phone"
+      name="phone"
+      type="text"
+      error="Phone is required!"
+    ></app-reactive-input>
+    <app-reactive-input
+      [form]="form"
+      label="Password"
+      name="password"
+      type="password"
+      error="Password is required!"
+    ></app-reactive-input>
+    <app-reactive-input
+      [form]="form"
+      label="Repeat Password"
+      name="repeatPassword"
+      type="password"
+      error="Repeat Password is required!"
+    ></app-reactive-input>
+    <app-button>Register</app-button>
+  </form>
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../../dialog/dialog.component';
+import { DialogSearchbarComponent } from '../../dialog/dialog-searchbar.component';
+import { LoginComponent } from '../../../../user/login/login.component';
+import { RegisterComponent } from '../../../../user/register/register.component';
 
 @Component({
   selector: 'app-header',
@@ -18,9 +20,17 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openDialog() {
-    this.dialog.open(DialogComponent, {
+  openSearchDialog() {
+    this.dialog.open(DialogSearchbarComponent, {
       width: '100%',
     });
+  }
+
+  openLoginDialog() {
+    this.dialog.open(LoginComponent);
+  }
+
+  openRegisterDialog() {
+    this.dialog.open(RegisterComponent);
   }
 }

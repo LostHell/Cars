@@ -5,11 +5,24 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './components/button/button.component';
 import { MaterialModule } from '../material/material.module';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogSearchbarComponent } from './components/dialog/dialog-searchbar.component';
+import { ReactiveInputComponent } from './components/form/reactive-input/reactive-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ButtonComponent, DialogComponent],
-  exports: [HeaderComponent, FooterComponent, ButtonComponent],
-  imports: [CommonModule, RouterModule, MaterialModule],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ButtonComponent,
+    DialogSearchbarComponent,
+    ReactiveInputComponent,
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    ButtonComponent,
+    ReactiveInputComponent,
+  ],
+  imports: [CommonModule, RouterModule, MaterialModule, ReactiveFormsModule],
 })
 export class SharedModule {}

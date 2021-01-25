@@ -1,0 +1,24 @@
+<div mat-dialog-content>
+  <h4 class="text-center mb-3">Login Panel</h4>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="submitLoginData()"
+    class="d-flex flex-column align-items-center"
+  >
+    <app-reactive-input
+      [form]="form"
+      label="Phone"
+      name="phone"
+      type="text"
+      error="Phone is required!"
+    ></app-reactive-input>
+    <app-reactive-input
+      [form]="form"
+      label="Password"
+      name="password"
+      type="password"
+      error="Password is required!"
+    ></app-reactive-input>
+    <app-button>Login</app-button>
+  </form>
+</div>
