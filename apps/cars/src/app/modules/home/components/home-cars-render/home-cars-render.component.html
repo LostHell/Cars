@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <mat-card-header class="justify-content-center">
+    <mat-card-title>{{ item.createdOn | date: 'fullDate' }}</mat-card-title>
+  </mat-card-header>
+  <img [src]="item.imageUrl" mat-card-image alt="Photo not Found" />
+  <mat-card-content>
+    <p>{{ item.description | slice: 0:80 }}...</p>
+  </mat-card-content>
+  <mat-card-actions class="d-flex justify-content-between">
+    <div>
+      <button class="mr-1 rounded-circle" mat-icon-button color="primary">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button class="mr-1 rounded-circle" mat-icon-button color="primary">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+    <app-button class="mr-2">Read</app-button>
+  </mat-card-actions>
+</mat-card>

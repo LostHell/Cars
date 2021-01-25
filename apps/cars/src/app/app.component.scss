@@ -1,0 +1,12 @@
+@import '../styles';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-outlet {
+  background-color: color('dark-gray');
+  color: color('white');
+}
