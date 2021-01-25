@@ -2,7 +2,15 @@
   <nav class="container py-4">
     <ul class="d-flex justify-content-between list-unstyled m-0">
       <li>
-        <a href="#" mat-icon-button><span class="material-icons">menu</span></a>
+        <button class="menu-btn" mat-icon-button [matMenuTriggerFor]="menu">
+          <span class="material-icons">menu</span>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a href="#" class="text-decoration-none" mat-menu-item>Home</a>
+          <a href="#" class="text-decoration-none" mat-menu-item>Login</a>
+          <a href="#" class="text-decoration-none" mat-menu-item>Register</a>
+          <a href="#" class="text-decoration-none" mat-menu-item>Make offer</a>
+        </mat-menu>
       </li>
       <li class="align-self-center">
         <a
@@ -13,9 +21,16 @@
       </li>
       <li>
         <a href="#" mat-icon-button
-          ><span class="material-icons">favorite_border</span></a
+          ><span
+            (click)="toggleBadgeVisibility()"
+            class="material-icons"
+            [matBadgeHidden]="hidden"
+            matBadge="15"
+            matBadgeColor="primary"
+            >favorite_border</span
+          ></a
         >
-        <a href="#" class="pl-2" mat-icon-button
+        <a (click)="openDialog()" class="pl-2" mat-icon-button
           ><span class="material-icons">search</span></a
         >
       </li>
