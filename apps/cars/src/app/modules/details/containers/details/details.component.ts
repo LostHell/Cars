@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { strict } from 'assert';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class DetailsComponent implements OnInit {
   cars = [
     {
       id: 1,
@@ -19,12 +21,15 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 2,
-      name: 'Audi A3 Sportback',
+      name: 'Audi A3 Sportback Audi A3 SportbackAudi A3 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
       price: '4 899',
-      imageUrl:
+      imageUrl: [
         'https://www.check24.de/kfz-versicherung/img/automarken/audi/audi-q5-2018.jpg',
+        'https://www.check24.de/kfz-versicherung/img/automarken/audi/audi-q5-2018.jpg',
+        'https://www.check24.de/kfz-versicherung/img/automarken/audi/audi-q5-2018.jpg',
+      ],
       createdOn: Date.now(),
     },
     {
@@ -108,24 +113,22 @@ export class HomeComponent implements OnInit {
       createdOn: Date.now(),
     },
   ];
-  listCars = [];
-  lastId = 4;
+  item: {
+    id;
+    name;
+    description;
+    price;
+    imageUrl;
+    createdOn;
+  };
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    for (let i = 0; i < this.lastId; i++) {
-      this.listCars.push(this.cars[i]);
-    }
-  }
+    this.item = this.cars.find(
+      (x) => x.id === Number(this.route.snapshot.params.id)
+    );
 
-  onScroll() {
-    console.log('scrolled!!');
-    for (let i = this.lastId; i < this.lastId + 4; i++) {
-      if (this.listCars.length < this.cars.length) {
-        this.listCars.push(this.cars[i]);
-      }
-    }
-    this.lastId = this.lastId + 4;
+    console.log(this.item);
   }
 }

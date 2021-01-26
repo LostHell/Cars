@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="d-flex justify-content-between mt-3">
+    <span class="createdOn">{{ item.createdOn | date: 'EEE, d MMMM y' }}</span>
+    <span class="price">{{ item.price }}</span>
+  </div>
+  <div>
+    <h1 class="mt-2 text-center">{{ item.name }}</h1>
+  </div>
+  <!--  {{ item | json }}-->
+</div>

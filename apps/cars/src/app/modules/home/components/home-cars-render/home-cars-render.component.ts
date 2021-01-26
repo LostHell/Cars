@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomeCarsRenderComponent implements OnInit {
   @Input() item: {
+    id: string;
     name: string;
     description: string;
     price: Number;

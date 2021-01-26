@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <ng-container *ngFor="let item of cars">
+    <ng-container *ngFor="let item of listCars">
       <app-home-cars-render
         [item]="item"
         class="py-3 col-12 col-md-6 col-lg-4"
@@ -8,3 +8,10 @@
     </ng-container>
   </div>
 </div>
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+></div>
