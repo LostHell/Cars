@@ -1,0 +1,18 @@
+@import '../../../../../styles';
+
+.images {
+  width: to-rem(203px);
+}
+
+.delete-btn {
+  right: 2.5rem;
+  top: 0.5rem;
+
+  .delete {
+    color: red;
+  }
+}
+
+.add {
+  color: green;
+}

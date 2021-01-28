@@ -1,6 +1,11 @@
 <mat-form-field [formGroup]="form" appearance="outline">
   <mat-label *ngIf="label">{{ label }}</mat-label>
-  <input matInput [type]="type" [formControlName]="name" />
+  <input
+    matInput
+    [type]="type"
+    [formControlName]="name"
+    [placeholder]="placeholder"
+  />
   <mat-error>
     {{ error }}
   </mat-error>

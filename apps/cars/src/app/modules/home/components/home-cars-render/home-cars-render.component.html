@@ -2,12 +2,13 @@
   <mat-card-header class="justify-content-center">
     <mat-card-title>{{ item.createdOn | date: 'EEE, d MMM y' }}</mat-card-title>
   </mat-card-header>
-  <img [src]="item.imageUrl" mat-card-image alt="Photo not Found" />
+  <img [src]="item.image" mat-card-image alt="Photo not Found" />
   <span>{{ item.price }}</span>
   <mat-card-content>
-    <mat-card-title class="border-bottom">{{
-      item.name | slice: 0:26
-    }}</mat-card-title>
+    <mat-card-title class="border-bottom"
+      >{{ item.make | slice: 0:8 }}
+      {{ item.model | slice: 0:18 }}</mat-card-title
+    >
     <p>{{ item.description | slice: 0:80 }}...</p>
   </mat-card-content>
   <mat-card-actions class="d-flex justify-content-between">

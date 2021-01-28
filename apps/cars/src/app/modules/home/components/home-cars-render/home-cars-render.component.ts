@@ -7,12 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomeCarsRenderComponent implements OnInit {
   @Input() item: {
-    id: string;
-    name: string;
-    description: string;
-    price: Number;
-    imageUrl: string;
-    createdOn: Date;
+    id;
+    make;
+    model;
+    description;
+    extras;
+    price;
+    image;
+    createdOn;
+    owner;
   };
 
   constructor() {}

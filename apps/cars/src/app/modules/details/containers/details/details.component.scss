@@ -18,3 +18,47 @@
     font-size: to-rem(20px);
   }
 }
+
+.info {
+  font-size: to-rem(16px);
+
+  @include media-breakpoint-up(md) {
+    font-size: to-rem(20px);
+  }
+}
+
+.features-extras {
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    width: 55%;
+  }
+
+  .extras {
+    width: to-rem(182px);
+  }
+
+  .cancel-item {
+    color: color('red');
+  }
+
+  .accept-item {
+    color: color('green');
+  }
+}
+
+.contacts {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 30%;
+  }
+
+  .location {
+    color: color('lightblue');
+  }
+}
+
+a,
+a:hover {
+  color: color('white');
+}

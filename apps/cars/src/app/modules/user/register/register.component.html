@@ -10,6 +10,7 @@
       label="Name"
       name="name"
       type="text"
+      placeholder="John Doe"
       error="Full Name is required!"
     ></app-reactive-input>
     <app-reactive-input
@@ -17,7 +18,32 @@
       label="Phone"
       name="phone"
       type="text"
+      placeholder="+359812345678"
       error="Phone is required!"
+    ></app-reactive-input>
+    <app-reactive-input
+      [form]="form"
+      label="Address"
+      name="address"
+      type="text"
+      placeholder="Friedrich Str. 117"
+      error="Address is required!"
+    ></app-reactive-input>
+    <app-reactive-input
+      [form]="form"
+      label="City"
+      name="city"
+      type="text"
+      placeholder="Berlin"
+      error="City is required!"
+    ></app-reactive-input>
+    <app-reactive-input
+      [form]="form"
+      label="Email"
+      name="email"
+      type="email"
+      placeholder="john.doe@gmail.com"
+      error="Email is required!"
     ></app-reactive-input>
     <app-reactive-input
       [form]="form"
