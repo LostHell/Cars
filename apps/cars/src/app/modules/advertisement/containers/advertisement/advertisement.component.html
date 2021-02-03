@@ -1,6 +1,7 @@
 <div class="container">
   <p class="mt-3 text-center text-uppercase">Create new advertisement</p>
   <form [formGroup]="form" class="my-3">
+    <p class="text-center pt-3 border-top">Add your car parameters</p>
     <div
       class="d-flex flex-column flex-sm-row flex-wrap justify-content-between align-items-center"
     >
@@ -37,6 +38,7 @@
         error="Price is required!"
       ></app-reactive-input>
     </div>
+    <p class="text-center pt-3 border-top">Add here your image/s link/s</p>
     <div
       formArrayName="images"
       class="d-flex flex-wrap flex-column flex-sm-row justify-content-between align-items-center"
@@ -71,5 +73,19 @@
     >
       <span class="add material-icons">add_circle</span>
     </button>
+    <p class="text-center pt-3 border-top">Choose car extras</p>
+    <div class="row ml-2 ml-sm-0 pb-3">
+      <div
+        *ngFor="let subtask of subtasks"
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
+      >
+        <section class="example-section">
+          <mat-checkbox color="primary" class="example-margin">{{
+            subtask.name
+          }}</mat-checkbox>
+        </section>
+      </div>
+    </div>
+    <app-button class="d-flex justify-content-center py-5">Create</app-button>
   </form>
 </div>

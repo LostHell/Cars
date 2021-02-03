@@ -1,0 +1,17 @@
+@import '../../../../../styles';
+
+img {
+  height: to-rem(210px);
+  object-fit: cover;
+}
+
+span {
+  position: absolute;
+  top: to-rem(252px);
+  right: to-rem(14px);
+  border: 2px solid color('orange');
+  border-radius: to-rem(14px);
+  padding: 0 to-rem(14px);
+  background: white;
+  font-size: 20px;
+}

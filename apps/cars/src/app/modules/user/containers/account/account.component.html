@@ -1,0 +1,65 @@
+<div class="container">
+  <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+    <mat-tab label="My Offers">
+      <p class="text-center text-uppercase mt-5 mb-3">List Your Offers</p>
+      <div class="row m-auto">
+        <ng-container *ngFor="let item of cars" class="row">
+          <app-offers
+            *ngIf="item.owner.name === 'Ivan Ivanov'"
+            [item]="item"
+            class="my-4 col-12 col-md-6 col-lg-4"
+          ></app-offers>
+        </ng-container>
+      </div>
+    </mat-tab>
+    <mat-tab label="Settings">
+      <p class="text-center text-uppercase mt-5 mb-3">
+        Change your account settings
+      </p>
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <form
+          [formGroup]="passwordForm"
+          class="d-flex flex-column align-items-center py-5 py-md-0"
+        >
+          <p>Change password</p>
+          <app-reactive-input
+            [form]="passwordForm"
+            label="New Password"
+            name="newPassword"
+            type="password"
+            error="New Password is required!"
+          ></app-reactive-input>
+          <app-reactive-input
+            [form]="passwordForm"
+            label="Repeat Password"
+            name="repeatPassword"
+            type="password"
+            error="Repeat Password is required!"
+          ></app-reactive-input>
+          <app-button>Change</app-button>
+        </form>
+        <form
+          [formGroup]="emailForm"
+          class="d-flex flex-column align-items-center py-5 py-md-0"
+        >
+          <p>Change email</p>
+          <app-reactive-input
+            [form]="emailForm"
+            label="New Email"
+            name="newEmail"
+            type="email"
+            error="New Email is required!"
+          ></app-reactive-input>
+          <app-reactive-input
+            [form]="emailForm"
+            label="Repeat Email"
+            name="repeatEmail"
+            type="email"
+            error="Repeat Email is required!"
+          ></app-reactive-input>
+          <app-button>Change</app-button>
+        </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
