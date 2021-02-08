@@ -1,0 +1,43 @@
+<div class="w-100">
+  <a
+    href="javascript:"
+    role="menuitem"
+    class="fileuploader d-block bg-white text-decoration-none"
+    appDragAndDropFileUpload
+    (click)="fileField.click()"
+    (fileDropped)="upload($event)"
+  >
+    <div class="img-wrapper d-flex flex-column align-items-center px-3 py-2">
+      <mat-icon *ngIf="!hasFiles">add_a_photo</mat-icon>
+      <div [class.m-0]="!hasFiles" class="row px-md-2">
+        <img
+          *ngIf="hasFiles"
+          class="col-6 col-md-4 py-2"
+          src="https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg"
+          alt=""
+        />
+        <img
+          *ngIf="hasFiles"
+          class="col-6 col-md-4 py-2"
+          src="https://www.check24.de/kfz-versicherung/img/automarken/audi/audi-q5-2018.jpg"
+          alt=""
+        />
+        <img
+          *ngIf="hasFiles"
+          class="col-6 col-md-4 py-2"
+          src="https://magazin.rv24.de/wp-content/uploads/2020/02/2020-Audi-A3-40-TFSI-Fahrbericht-Test-Review-Jens-Stratmann-13.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="info text-center border-top py-1">{{ label }}</div>
+    <input
+      type="file"
+      name="avatars"
+      #fileField
+      (change)="upload($event.target.files)"
+      hidden
+      multiple
+    />
+  </a>
+</div>

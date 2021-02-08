@@ -1,7 +1,11 @@
 @import '../../../../../styles';
 
 .images {
-  width: to-rem(203px);
+  border-radius: to-rem(6px);
+}
+
+mat-form-field {
+  min-width: to-rem(252px);
 }
 
 .menu-btn {
@@ -9,8 +13,8 @@
 }
 
 .delete-btn {
-  right: 2.5rem;
-  top: 0.5rem;
+  right: to-rem(35px);
+  top: to-rem(9px);
 
   .delete {
     color: red;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSearchbarComponent } from '../../dialog/dialog-searchbar.component';
 import { LoginComponent } from '../../../../user/containers/login/login.component';
@@ -9,16 +9,19 @@ import { RegisterComponent } from '../../../../user/containers/register/register
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  @Output() public sidenavToggle = new EventEmitter();
+  @Output() public sidenavClose = new EventEmitter();
+
+  @Input() navigation = [];
+
   hidden = false;
+
+  constructor(private dialog: MatDialog) {}
 
   toggleBadgeVisibility() {
     this.hidden = !this.hidden;
   }
-
-  constructor(private dialog: MatDialog) {}
-
-  ngOnInit(): void {}
 
   openSearchDialog() {
     this.dialog.open(DialogSearchbarComponent, {
@@ -26,11 +29,11 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  openLoginDialog() {
-    this.dialog.open(LoginComponent);
+  onToggleSidenav() {
+    this.sidenavToggle.emit();
   }
 
-  openRegisterDialog() {
-    this.dialog.open(RegisterComponent);
+  onCloseSidenav() {
+    this.sidenavClose.emit();
   }
 }

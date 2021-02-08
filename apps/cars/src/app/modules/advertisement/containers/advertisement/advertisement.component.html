@@ -5,30 +5,30 @@
     <div
       class="d-flex flex-column flex-sm-row flex-wrap justify-content-between align-items-center"
     >
-      <app-reactive-input
-        [form]="form"
-        label="Make"
-        name="make"
-        type="text"
-        placeholder="Audi"
-        error="Make is required!"
-      ></app-reactive-input>
-      <app-reactive-input
-        [form]="form"
-        label="Model"
-        name="model"
-        type="text"
-        placeholder="A3 Sportback"
-        error="Model is required!"
-      ></app-reactive-input>
-      <app-reactive-input
-        [form]="form"
-        label="Description"
-        name="description"
-        type="text"
-        placeholder="Short description"
-        error="Description is required!"
-      ></app-reactive-input>
+      <mat-form-field appearance="outline">
+        <mat-label>Make</mat-label>
+        <mat-select [formControl]="makesControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let make of makes" [value]="make">
+            {{ make.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="makesControl.hasError('required')"
+          >Please choose make</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Model</mat-label>
+        <mat-select [formControl]="modelsControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let model of models" [value]="model">
+            {{ model.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="modelsControl.hasError('required')"
+          >Please choose model</mat-error
+        >
+      </mat-form-field>
       <app-reactive-input
         [form]="form"
         label="Price"
@@ -38,42 +38,19 @@
         error="Price is required!"
       ></app-reactive-input>
     </div>
-    <p class="text-center pt-3 border-top">Add here your image/s link/s</p>
-    <div
-      formArrayName="images"
-      class="d-flex flex-wrap flex-column flex-sm-row justify-content-between align-items-center"
-    >
-      <div
-        *ngFor="let item of images.controls; let i = index"
-        [formGroupName]="i"
-        class="images d-flex position-relative"
-      >
-        <app-reactive-input
-          [form]="images"
-          label="Image"
-          name="{{ i }}"
-          type="text"
-          placeholder="https://..."
-          error="Image is required!"
-        ></app-reactive-input>
-        <button
-          *ngIf="images.length > 1"
-          (click)="removeQuantity(i)"
-          class="menu-btn delete-btn"
-          mat-icon-button
-        >
-          <span class="delete material-icons">delete</span>
-        </button>
-      </div>
+    <div>
+      <app-text-area-input
+        [form]="form"
+        label="Description"
+        name="description"
+        class="text-area d-flex justify-content-center m-auto"
+      ></app-text-area-input>
     </div>
-    <button
-      (click)="addImage()"
-      class="d-flex justify-content-center align-items-center m-auto menu-btn"
-      mat-icon-button
-    >
-      <span class="add material-icons">add_circle</span>
-    </button>
-    <p class="text-center pt-3 border-top">Choose car extras</p>
+    <p class="text-center mt-5">Add here your image/s here</p>
+    <div class="images border">
+      <app-file-uploader label="Upload file"></app-file-uploader>
+    </div>
+    <p class="text-center mt-5">Choose car extras</p>
     <div class="row ml-2 ml-sm-0 pb-3">
       <div
         *ngFor="let subtask of subtasks"

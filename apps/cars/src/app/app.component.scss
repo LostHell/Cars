@@ -4,6 +4,14 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  mat-sidenav {
+    width: to-rem(168px);
+
+    @include media-breakpoint-up(md) {
+      width: to-rem(224px);
+    }
+  }
 }
 
 router-outlet {

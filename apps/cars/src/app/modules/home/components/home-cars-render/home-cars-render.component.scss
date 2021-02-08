@@ -5,13 +5,13 @@ img {
   object-fit: cover;
 }
 
-span {
+.price {
   position: absolute;
-  top: to-rem(252px);
+  top: to-rem(194px);
   right: to-rem(14px);
   border: 2px solid color('orange');
   border-radius: to-rem(14px);
-  padding: 0 1rem;
+  padding: 0 to-rem(14px);
   background: white;
-  font-size: 20px;
+  font-size: to-rem(20px);
 }
