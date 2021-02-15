@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  AbstractControl,
-  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -15,8 +13,6 @@ import {
 })
 export class AdvertisementComponent implements OnInit {
   form: FormGroup;
-  makesControl: AbstractControl;
-  modelsControl: AbstractControl;
 
   subtasks = [
     { name: 'No matter', completed: false },
@@ -37,51 +33,74 @@ export class AdvertisementComponent implements OnInit {
     { name: 'Navigation', completed: false },
   ];
 
-  makes = [
-    { name: 'Audi' },
-    { name: 'Mercedes' },
-    { name: 'BMW' },
-    { name: 'VW' },
-  ];
-
-  models = [
-    { name: 'A3' },
-    { name: 'A3 Sportback' },
-    { name: 'A4' },
-    { name: 'A4 Sportback' },
-    { name: 'A4 Allroad' },
-    { name: 'A6' },
-    { name: 'A4 Sportback' },
-    { name: 'A4 Allroad' },
+  cars = [
+    {
+      make: 'Audi',
+      models: [
+        { model: 'A3' },
+        { model: 'A3 Sportback' },
+        { model: 'A4' },
+        { model: 'A4 Allroad' },
+        { model: 'A6' },
+        { model: 'A8' },
+        { model: 'Q3' },
+        { model: 'Q5' },
+        { model: 'Q7' },
+      ],
+    },
+    {
+      make: 'Mercedes',
+      models: [
+        { model: '124' },
+        { model: '180' },
+        { model: '190' },
+        { model: 'A180' },
+        { model: 'A200' },
+        { model: 'A250' },
+        { model: 'C200' },
+        { model: 'C250' },
+        { model: 'C300' },
+      ],
+    },
+    {
+      make: 'BMW',
+      models: [
+        { model: '316' },
+        { model: '316i' },
+        { model: '318' },
+        { model: '320' },
+        { model: '320d' },
+        { model: '330' },
+        { model: '330d' },
+        { model: '520' },
+        { model: '530' },
+      ],
+    },
+    {
+      make: 'VW',
+      models: [
+        { model: 'Golf' },
+        { model: 'Jetta' },
+        { model: 'Up' },
+        { model: 'Luppo' },
+        { model: 'Polo' },
+      ],
+    },
   ];
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.form = new FormGroup({
-      make: new FormControl('', [Validators.required]),
-      model: new FormControl('', [Validators.required]),
+      car: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
-      images: this.fb.array([this.fb.control('')]),
     });
-
-    this.makesControl = this.form.controls['make'];
-    this.modelsControl = this.form.controls['model'];
-    console.log(this.makesControl.hasError('required'));
   }
 
-  get images(): FormArray {
-    return this.form.get('images') as FormArray;
-  }
-
-  addImage() {
-    this.images.push(this.fb.control(''));
-  }
-
-  removeQuantity(i: number) {
-    if (this.images.length > 1) {
-      this.images.removeAt(i);
+  createCar() {
+    if (this.form.valid) {
+      console.log(this.form.value);
     }
   }
 }

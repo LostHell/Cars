@@ -7,20 +7,3 @@
 mat-form-field {
   min-width: to-rem(252px);
 }
-
-.menu-btn {
-  border-radius: 50%;
-}
-
-.delete-btn {
-  right: to-rem(35px);
-  top: to-rem(9px);
-
-  .delete {
-    color: red;
-  }
-}
-
-.add {
-  color: green;
-}

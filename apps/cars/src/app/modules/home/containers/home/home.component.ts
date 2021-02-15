@@ -449,7 +449,6 @@ export class HomeComponent implements OnInit {
   }
 
   onScroll() {
-    console.log('scrolled!!');
     for (let i = this.lastId; i < this.lastId + 4; i++) {
       if (this.listCars.length < this.cars.length) {
         this.listCars.push(this.cars[i]);

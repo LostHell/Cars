@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss'],
 })
-export class OffersComponent implements OnInit {
+export class OffersComponent {
   @Input() item: {
     id;
     make;
@@ -19,6 +19,4 @@ export class OffersComponent implements OnInit {
   };
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

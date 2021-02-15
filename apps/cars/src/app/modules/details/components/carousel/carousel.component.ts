@@ -12,7 +12,7 @@ export class CarouselComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.item = this.images[this.index];
   }
 

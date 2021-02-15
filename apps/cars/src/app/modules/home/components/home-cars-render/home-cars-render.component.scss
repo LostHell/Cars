@@ -9,9 +9,9 @@ img {
   position: absolute;
   top: to-rem(194px);
   right: to-rem(14px);
-  border: 2px solid color('orange');
+  border: to-rem(2px) solid color('orange');
   border-radius: to-rem(14px);
   padding: 0 to-rem(14px);
-  background: white;
+  background: color('white');
   font-size: to-rem(20px);
 }

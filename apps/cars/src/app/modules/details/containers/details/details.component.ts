@@ -475,7 +475,7 @@ export class DetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.item = this.cars.find(
       (x) => x.id === Number(this.route.snapshot.params.id)
     );

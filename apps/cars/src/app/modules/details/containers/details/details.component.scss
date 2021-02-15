@@ -1,6 +1,6 @@
 @import '../../../../../styles';
 
-.createdOn {
+.created-on {
   font-size: to-rem(14px);
 
   @include media-breakpoint-up(md) {
@@ -9,9 +9,9 @@
 }
 
 .price {
-  border: 2px solid color('orange');
+  border: to-rem(2px) solid color('orange');
   border-radius: to-rem(14px);
-  padding: 0 1rem;
+  padding: 0 to-rem(14px);
   font-size: to-rem(14px);
 
   @include media-breakpoint-up(md) {
@@ -29,16 +29,13 @@
 
 .features-extras {
   width: 100%;
+
   @include media-breakpoint-up(md) {
     width: 55%;
   }
 
   .extras {
     width: to-rem(182px);
-  }
-
-  .cancel-item {
-    color: color('red');
   }
 
   .accept-item {

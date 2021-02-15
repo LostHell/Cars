@@ -11,6 +11,7 @@ import { RegisterComponent } from '../../../../user/containers/register/register
 })
 export class HeaderComponent {
   @Output() public sidenavToggle = new EventEmitter();
+
   @Output() public sidenavClose = new EventEmitter();
 
   @Input() navigation = [];
