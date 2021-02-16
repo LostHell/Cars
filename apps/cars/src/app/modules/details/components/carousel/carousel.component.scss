@@ -1,0 +1,10 @@
+@import '../../../../../styles';
+
+img {
+  min-height: to-rem(210px);
+  object-fit: cover;
+
+  @include media-breakpoint-up(md) {
+    height: to-rem(560px);
+  }
+}

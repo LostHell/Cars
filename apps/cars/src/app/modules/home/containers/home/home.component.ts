@@ -9,103 +9,432 @@ export class HomeComponent implements OnInit {
   cars = [
     {
       id: 1,
-      name: 'Audi A3',
+      make: 'Audi',
+      model: 'A3',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'Cabriolet',
+          status: true,
+        },
+        {
+          name: '4x4',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
       price: '4 899 $',
-      imageUrl:
-        'https://magazin.rv24.de/wp-content/uploads/2020/02/2020-Audi-A3-40-TFSI-Fahrbericht-Test-Review-Jens-Stratmann-13.jpg',
+      image: [
+        'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        address: 'Osdorfer Str 113, Berlin',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 2,
-      name: 'Audi A3 Sportback',
+      make: 'Audi',
+      model: 'A3 Sportback',
       description:
-        'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
-      price: '4 899',
-      imageUrl:
-        'https://www.check24.de/kfz-versicherung/img/automarken/audi/audi-q5-2018.jpg',
+        '\n' +
+        'Особености и Екстри\n' +
+        'Комфорт: Климатик, Климатроник, Кожен салон, Ел.стъкла, Ел.огледала, Подгряване на седалки, Алуминиеви джанти, DVD/TV, Мултифункционален волан\n' +
+        'Сигурност: ABS, ESP, Airbag, Ксенонови фарове, Халогенни фарове, ASR/Тракшън контрол, Аларма, Центр. заключване, Застраховка, Безключово палене\n' +
+        'Друго: Автопилот, Сервизна книжка, Навигационна система\n',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'Cabriolet',
+          status: true,
+        },
+        {
+          name: '4x4',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
+      price: '4 899 $',
+      image: [
+        'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        address: 'Osdorfer Str 113, Berlin',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 3,
-      name: 'Audi A3 Sportback',
+      make: 'Audi',
+      model: 'Q3 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'Cabriolet',
+          status: true,
+        },
+        {
+          name: '4x4',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
       price: '4 899 $',
-      imageUrl:
+      image: [
         'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        address: 'bul. San Stefano 29, Bulgaria',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 4,
-      name: 'Audi A3',
+      make: 'Audi',
+      model: 'Q5 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
-      price: '4 899',
-      imageUrl:
-        'https://magazin.rv24.de/wp-content/uploads/2020/02/2020-Audi-A3-40-TFSI-Fahrbericht-Test-Review-Jens-Stratmann-13.jpg',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'Cabriolet',
+          status: true,
+        },
+        {
+          name: '4x4',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
+      price: '4 899 $',
+      image: [
+        'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 5,
-      name: 'Audi A3',
+      make: 'Audi',
+      model: 'A3 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
-      price: '4 899',
-      imageUrl:
-        'https://magazin.rv24.de/wp-content/uploads/2020/02/2020-Audi-A3-40-TFSI-Fahrbericht-Test-Review-Jens-Stratmann-13.jpg',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'Cabriolet',
+          status: true,
+        },
+        {
+          name: '4x4',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
+      price: '4 899 $',
+      image: [
+        'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 6,
-      name: 'Audi A3',
+      make: 'Audi',
+      model: 'Q7',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'Cabriolet',
+          status: true,
+        },
+        {
+          name: '4x4',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
       price: '4 899 $',
-      imageUrl:
-        'https://magazin.rv24.de/wp-content/uploads/2020/02/2020-Audi-A3-40-TFSI-Fahrbericht-Test-Review-Jens-Stratmann-13.jpg',
+      image: [
+        'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 7,
-      name: 'Audi A3 Sportback',
+      make: 'Audi',
+      model: 'A3 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
-      price: '4 899',
-      imageUrl:
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
+      price: '4 899 $',
+      image: [
         'https://www.check24.de/kfz-versicherung/img/automarken/audi/audi-q5-2018.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 8,
-      name: 'Audi A3 Sportback',
+      make: 'Audi',
+      model: 'A3 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
       price: '4 899 $',
-      imageUrl:
+      image: [
         'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 9,
-      name: 'Audi A3',
+      make: 'Audi',
+      model: 'RS 7 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
-      price: '4 899',
-      imageUrl:
-        'https://magazin.rv24.de/wp-content/uploads/2020/02/2020-Audi-A3-40-TFSI-Fahrbericht-Test-Review-Jens-Stratmann-13.jpg',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
+      price: '4 899 $',
+      image: [
+        'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
     {
       id: 10,
-      name: 'Audi A3',
+      make: 'Audi',
+      model: 'RS 3 Sportback',
       description:
         'Автомобилът е нов внос от Белгия.Отлична скоростна кутия и ходова част , перфектно работещ двигател, РАБОТЕЩ КЛИМАТИК, ABS и др. Автокъщата предлага транспорт на закупените автомобили до КАТ, също така и регистрация и съдействие за изваждане на транзитни номера. Всички автомобили на автокъщата са с гарантиран произход! ! ! За повече информация на тел0899930088 ',
-      price: '4 899',
-      imageUrl:
-        'https://magazin.rv24.de/wp-content/uploads/2020/02/2020-Audi-A3-40-TFSI-Fahrbericht-Test-Review-Jens-Stratmann-13.jpg',
+      extras: [
+        {
+          name: 'Alarm',
+          status: true,
+        },
+        {
+          name: 'Leather Seats',
+          status: false,
+        },
+        {
+          name: 'CD Player',
+          status: true,
+        },
+        {
+          name: 'Bluetooth',
+          status: false,
+        },
+      ],
+      price: '4 899 $',
+      image: [
+        'https://media.caradvice.com.au/image/private/q_auto/v1555285325/f8bzv7tl5ueo0chv6gcj.jpg',
+      ],
       createdOn: Date.now(),
+      owner: {
+        name: 'Ivan Ivanov',
+        phone: '+359877711021',
+        email: 'ivan.ivanov@gmail.com',
+      },
     },
   ];
   listCars = [];
@@ -120,7 +449,6 @@ export class HomeComponent implements OnInit {
   }
 
   onScroll() {
-    console.log('scrolled!!');
     for (let i = this.lastId; i < this.lastId + 4; i++) {
       if (this.listCars.length < this.cars.length) {
         this.listCars.push(this.cars[i]);

@@ -1,6 +1,6 @@
 @import '../../../../../styles';
 
-.createdOn {
+.created-on {
   font-size: to-rem(14px);
 
   @include media-breakpoint-up(md) {
@@ -9,12 +9,53 @@
 }
 
 .price {
-  border: 2px solid color('orange');
+  border: to-rem(2px) solid color('orange');
   border-radius: to-rem(14px);
-  padding: 0 1rem;
+  padding: 0 to-rem(14px);
   font-size: to-rem(14px);
 
   @include media-breakpoint-up(md) {
     font-size: to-rem(20px);
   }
+}
+
+.info {
+  font-size: to-rem(16px);
+
+  @include media-breakpoint-up(md) {
+    font-size: to-rem(20px);
+  }
+}
+
+.features-extras {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 55%;
+  }
+
+  .extras {
+    width: to-rem(182px);
+  }
+
+  .accept-item {
+    color: color('green');
+  }
+}
+
+.contacts {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 30%;
+  }
+
+  .location {
+    color: color('lightblue');
+  }
+}
+
+a,
+a:hover {
+  color: color('white');
 }

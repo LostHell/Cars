@@ -1,10 +1,48 @@
 <div class="container">
   <div class="d-flex justify-content-between mt-3">
-    <span class="createdOn">{{ item.createdOn | date: 'EEE, d MMMM y' }}</span>
+    <span class="created-on">{{ item.createdOn | date: 'EEE, d MMMM y' }}</span>
     <span class="price">{{ item.price }}</span>
   </div>
   <div>
-    <h1 class="mt-2 text-center">{{ item.name }}</h1>
+    <p class="info mt-2 text-center font-weight-bold">
+      {{ item.make }} {{ item.model }}
+    </p>
+    <app-carousel [images]="item.images"></app-carousel>
   </div>
-  <!--  {{ item | json }}-->
+  <div class="d-flex flex-wrap justify-content-between my-5">
+    <div class="features-extras">
+      <p class="info border-bottom font-weight-bold">Features and Extras</p>
+      <p>{{ item.description }}</p>
+      <div class="d-flex flex-wrap">
+        <div *ngFor="let extra of item.extras">
+          <p *ngIf="extra.status" class="extras d-flex align-items-center mb-2">
+            <span class="accept-item mr-2 material-icons">check_circle</span
+            >{{ extra.name }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contacts mt-3 mt-md-0">
+      <p class="info border-bottom font-weight-bold mb-2">Seller Contacts</p>
+      <p class="info">
+        <span class="font-weight-bold">Seller</span>: {{ item.owner.name }}
+      </p>
+      <p class="d-flex align-items-center">
+        <span class="location mr-1 material-icons">near_me</span>
+        {{ item.owner.address }}
+      </p>
+      <div class="d-flex justify-content-between flex-wrap">
+        <app-button class="mt-1 mr-1 mb-1"
+          ><a class="text-decoration-none" href="tel:{{ item.owner.phone }}"
+            >Call me now</a
+          ></app-button
+        >
+        <app-button class="mt-1 mb-1"
+          ><a class="text-decoration-none" href="mailto:{{ item.owner.email }}">
+            Send me email</a
+          ></app-button
+        >
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 @import '../../../../../../styles';
 
-mat-label {
-  color: color('black');
+mat-form-field {
+  min-width: to-rem(252px);
 }

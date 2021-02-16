@@ -8,6 +8,9 @@ import { MaterialModule } from '../material/material.module';
 import { DialogSearchbarComponent } from './components/dialog/dialog-searchbar.component';
 import { ReactiveInputComponent } from './components/form/reactive-input/reactive-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+import { TextAreaInputComponent } from './components/form/text-area-input/text-area-input.component';
+import { FileUploaderComponent } from './components/form/file-uploader/file-uploader.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonComponent,
     DialogSearchbarComponent,
     ReactiveInputComponent,
+    SidenavComponent,
+    TextAreaInputComponent,
+    FileUploaderComponent,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     ButtonComponent,
     ReactiveInputComponent,
+    SidenavComponent,
+    TextAreaInputComponent,
+    FileUploaderComponent,
   ],
   imports: [CommonModule, RouterModule, MaterialModule, ReactiveFormsModule],
 })

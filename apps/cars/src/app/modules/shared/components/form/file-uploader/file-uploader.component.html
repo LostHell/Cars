@@ -1,0 +1,31 @@
+<div class="w-100">
+  <a
+    href="javascript:"
+    role="menuitem"
+    class="fileuploader d-block bg-white text-decoration-none"
+    appDragAndDropFileUpload
+    (click)="fileField.click()"
+    (fileDropped)="upload($event)"
+  >
+    <div class="img-wrapper d-flex flex-column align-items-center px-3 py-2">
+      <mat-icon *ngIf="!hasFiles">add_a_photo</mat-icon>
+      <div [class.m-0]="!hasFiles" class="row px-md-2">
+        <img
+          *ngFor="let image of images"
+          class="col-6 col-md-4 py-2"
+          [src]="image"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="info text-center border-top py-1">{{ label }}</div>
+    <input
+      type="file"
+      name="avatars"
+      #fileField
+      (change)="upload($event.target.files)"
+      hidden
+      multiple
+    />
+  </a>
+</div>

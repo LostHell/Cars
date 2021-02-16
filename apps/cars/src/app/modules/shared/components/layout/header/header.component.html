@@ -2,29 +2,18 @@
   <nav class="container py-4">
     <ul class="d-flex justify-content-between list-unstyled m-0">
       <li>
-        <button class="menu-btn" mat-icon-button [matMenuTriggerFor]="menu">
+        <button
+          class="menu-btn rounded-circle"
+          (click)="onToggleSidenav()"
+          mat-icon-button
+        >
           <span class="material-icons">menu</span>
         </button>
-        <mat-menu #menu="matMenu">
-          <a routerLink="/" class="text-decoration-none" mat-menu-item>Home</a>
-          <a
-            (click)="openLoginDialog()"
-            class="text-decoration-none"
-            mat-menu-item
-            >Login</a
-          >
-          <a
-            (click)="openRegisterDialog()"
-            class="text-decoration-none"
-            mat-menu-item
-            >Register</a
-          >
-          <a href="#" class="text-decoration-none" mat-menu-item>Make offer</a>
-        </mat-menu>
       </li>
       <li class="align-self-center">
         <a
           routerLink="/"
+          (click)="onCloseSidenav()"
           class="text-uppercase text-decoration-none font-weight-bold"
           >cars.com</a
         >
@@ -40,7 +29,7 @@
             >favorite_border</span
           ></a
         >
-        <a (click)="openSearchDialog()" class="pl-2" mat-icon-button
+        <a (click)="openSearchDialog()" class="ml-1" mat-icon-button
           ><span class="material-icons">search</span></a
         >
       </li>
