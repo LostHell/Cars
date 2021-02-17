@@ -4,7 +4,7 @@ import { AdvertisementRoutingModule } from './advertisement-routing.module';
 
 import { AdvertisementComponent } from './containers/advertisement/advertisement.component';
 import { SharedModule } from '../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { MaterialModule } from '../material/material.module';
     SharedModule,
     ReactiveFormsModule,
     MaterialModule,
+    FormsModule,
   ],
 })
 export class AdvertisementModule {}

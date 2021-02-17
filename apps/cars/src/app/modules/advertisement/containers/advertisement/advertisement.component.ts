@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-advertisement',
@@ -15,22 +10,21 @@ export class AdvertisementComponent implements OnInit {
   form: FormGroup;
 
   subtasks = [
-    { name: 'No matter', completed: false },
-    { name: 'Air conditioning', completed: false },
-    { name: 'Climatronic', completed: false },
-    { name: 'Leather interior/seats', completed: false },
-    { name: 'Electric windows', completed: false },
-    { name: 'Electric mirrors', completed: false },
-    { name: 'Electric seats', completed: false },
-    { name: 'Multifunction steering wheel', completed: false },
-    { name: '4 x 4', completed: false },
-    { name: 'ABS', completed: false },
-    { name: 'ESP', completed: false },
-    { name: 'Airbag', completed: false },
-    { name: 'Alarm', completed: false },
-    { name: 'Autopilot', completed: false },
-    { name: 'CD Player', completed: false },
-    { name: 'Navigation', completed: false },
+    'Air conditioning',
+    'Climatronic',
+    'Leather interior/seats',
+    'Electric windows',
+    'Electric mirrors',
+    'Electric seats',
+    'Multifunction steering wheel',
+    '4 x 4',
+    'ABS',
+    'ESP',
+    'Airbag',
+    'Alarm',
+    'Autopilot',
+    'CD Player',
+    'Navigation',
   ];
 
   cars = [
@@ -88,19 +82,39 @@ export class AdvertisementComponent implements OnInit {
     },
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor() {}
 
   ngOnInit() {
     this.form = new FormGroup({
       car: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
+      subtask: new FormArray([]),
+      images: new FormArray([]),
     });
   }
 
   createCar() {
     if (this.form.valid) {
+      // console.log(this.form.value.car);
       console.log(this.form.value);
     }
+  }
+
+  setTask(task) {
+    if (!this.form.value.subtask.includes(task)) {
+      this.form.value.subtask.push(task);
+    } else {
+      this.form.value.subtask.forEach((el) => {
+        if (task === el) {
+          const index = this.form.value.subtask.indexOf(task);
+          this.form.value.subtask.splice(index, 1);
+        }
+      });
+    }
+  }
+
+  addImages(event) {
+    this.form.value.images.push(event);
   }
 }

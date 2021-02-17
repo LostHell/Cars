@@ -4,12 +4,12 @@ import { HomeRoutingModule } from './home-routing.module';
 
 import { HomeComponent } from './containers/home/home.component';
 import { MaterialModule } from '../material/material.module';
-import { HomeCarsRenderComponent } from './components/home-cars-render/home-cars-render.component';
 import { SharedModule } from '../shared/shared.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { HomeCardBtnsComponent } from './components/home-card-btns/home-card-btns.component';
 
 @NgModule({
-  declarations: [HomeComponent, HomeCarsRenderComponent],
+  declarations: [HomeComponent, HomeCardBtnsComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

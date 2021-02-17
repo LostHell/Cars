@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
 import { TextAreaInputComponent } from './components/form/text-area-input/text-area-input.component';
 import { FileUploaderComponent } from './components/form/file-uploader/file-uploader.component';
+import { CarsCardRenderComponent } from './components/card/cars-card-render/cars-card-render.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FileUploaderComponent } from './components/form/file-uploader/file-uplo
     SidenavComponent,
     TextAreaInputComponent,
     FileUploaderComponent,
+    CarsCardRenderComponent,
   ],
   exports: [
     HeaderComponent,
@@ -31,6 +33,7 @@ import { FileUploaderComponent } from './components/form/file-uploader/file-uplo
     SidenavComponent,
     TextAreaInputComponent,
     FileUploaderComponent,
+    CarsCardRenderComponent,
   ],
   imports: [CommonModule, RouterModule, MaterialModule, ReactiveFormsModule],
 })
