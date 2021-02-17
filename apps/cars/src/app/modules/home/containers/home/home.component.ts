@@ -437,7 +437,9 @@ export class HomeComponent implements OnInit {
       },
     },
   ];
+
   listCars = [];
+
   lastId = 4;
 
   constructor() {}

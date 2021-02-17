@@ -8,6 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AccountComponent implements OnInit {
   passwordForm: FormGroup;
+
   emailForm: FormGroup;
 
   cars = [
