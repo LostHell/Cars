@@ -18,12 +18,11 @@ export class FileUploaderComponent {
 
   upload(files) {
     if (!!files) {
-      const mimeType = files[0].type;
+      for (const file of files) {
+        const mimeType = file.type;
 
-      if (mimeType.match(/image.*/)) {
-        this.hasFiles = true;
-
-        for (const file of files) {
+        if (mimeType.match(/image.*/)) {
+          this.hasFiles = true;
           const reader = new FileReader();
           reader.readAsDataURL(file);
 
