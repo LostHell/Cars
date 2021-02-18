@@ -18,16 +18,20 @@ export class FileUploaderComponent {
 
   upload(files) {
     if (!!files) {
-      this.hasFiles = true;
+      const mimeType = files[0].type;
 
-      for (const file of files) {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
+      if (mimeType.match(/image.*/)) {
+        this.hasFiles = true;
 
-        reader.onload = () => {
-          this.images = this.images.concat(reader.result);
-          this.imagesArray.emit(reader.result);
-        };
+        for (const file of files) {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+
+          reader.onload = () => {
+            this.images = this.images.concat(reader.result);
+            this.imagesArray.emit(reader.result);
+          };
+        }
       }
     }
   }
