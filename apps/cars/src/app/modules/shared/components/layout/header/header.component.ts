@@ -1,8 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSearchbarComponent } from '../../dialog/dialog-searchbar.component';
-import { LoginComponent } from '../../../../user/containers/login/login.component';
-import { RegisterComponent } from '../../../../user/containers/register/register.component';
 
 @Component({
   selector: 'app-header',

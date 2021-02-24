@@ -8,10 +8,15 @@ import { FormGroup } from '@angular/forms';
 })
 export class ReactiveInputComponent implements AfterViewInit {
   @Input() form: FormGroup;
+
   @Input() name: string;
+
   @Input() label: string;
+
   @Input() placeholder: string;
+
   @Input() type: 'text' | 'email' | 'password' | 'file' | 'number' = 'text';
+
   @Input() error: string;
 
   constructor() {}

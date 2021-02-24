@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-home-cars-render',
-  templateUrl: './home-cars-render.component.html',
-  styleUrls: ['./home-cars-render.component.scss'],
+  selector: 'app-cars-card-render',
+  templateUrl: './cars-card-render.component.html',
+  styleUrls: ['./cars-card-render.component.scss'],
 })
-export class HomeCarsRenderComponent {
+export class CarsCardRenderComponent {
   @Input() item: {
     id;
     make;

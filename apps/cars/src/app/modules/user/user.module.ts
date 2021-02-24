@@ -8,10 +8,15 @@ import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountComponent } from './containers/account/account.component';
-import { OffersComponent } from './components/offers/offers.component';
+import { AccountCardBtnsComponent } from './components/account-card-btns/account-card-btns.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, AccountComponent, OffersComponent],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    AccountComponent,
+    AccountCardBtnsComponent,
+  ],
   imports: [
     CommonModule,
     UserRoutingModule,

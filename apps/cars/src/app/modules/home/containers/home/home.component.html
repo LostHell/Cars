@@ -1,11 +1,15 @@
 <div class="container">
   <div class="row">
-    <ng-container *ngFor="let item of listCars">
-      <app-home-cars-render
-        [item]="item"
-        class="py-3 col-12 col-md-6 col-lg-4"
-      ></app-home-cars-render>
-    </ng-container>
+    <app-cars-card-render
+      *ngFor="let item of listCars"
+      [item]="item"
+      class="py-3 col-12 col-md-6 col-lg-4"
+    >
+      <app-home-card-btns
+        [itemId]="item.id"
+        class="d-flex justify-content-between w-100"
+      ></app-home-card-btns>
+    </app-cars-card-render>
   </div>
 </div>
 <div

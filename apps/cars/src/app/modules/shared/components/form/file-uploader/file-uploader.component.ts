@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-file-uploader',
@@ -10,21 +10,27 @@ export class FileUploaderComponent {
 
   @Input() hasFiles = false;
 
+  @Output() imagesArray = new EventEmitter<any>();
+
   images = [];
 
   constructor() {}
 
   upload(files) {
     if (!!files) {
-      this.hasFiles = true;
-
       for (const file of files) {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
+        const mimeType = file.type;
 
-        reader.onload = () => {
-          this.images = this.images.concat(reader.result);
-        };
+        if (mimeType.match(/image.*/)) {
+          this.hasFiles = true;
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+
+          reader.onload = () => {
+            this.images = this.images.concat(reader.result);
+            this.imagesArray.emit(reader.result);
+          };
+        }
       }
     }
   }

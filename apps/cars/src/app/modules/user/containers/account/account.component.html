@@ -3,12 +3,16 @@
     <mat-tab label="My Offers">
       <p class="text-center text-uppercase mt-5 mb-3">List Your Offers</p>
       <div class="row m-auto">
-        <ng-container *ngFor="let item of cars" class="row">
-          <app-offers
+        <ng-container *ngFor="let item of cars">
+          <app-cars-card-render
             *ngIf="item.owner.name === 'Ivan Ivanov'"
             [item]="item"
             class="my-4 p-0 p-md-3 col-12 col-md-6 col-lg-4"
-          ></app-offers>
+          >
+            <app-account-card-btns
+              class="d-flex justify-content-between w-100"
+            ></app-account-card-btns>
+          </app-cars-card-render>
         </ng-container>
       </div>
     </mat-tab>

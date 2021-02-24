@@ -12,7 +12,7 @@
           <mat-optgroup *ngFor="let car of cars" [label]="car.make">
             <mat-option
               *ngFor="let models of car.models"
-              [value]="models.model"
+              value="{{ car.make }} {{ models.model }}"
             >
               {{ models.model }}
             </mat-option>
@@ -39,9 +39,12 @@
         class="text-area d-flex justify-content-center m-auto"
       ></app-text-area-input>
     </div>
-    <p class="text-center mt-5">Add here your image/s here</p>
+    <p class="text-center mt-5">Add your image/s here</p>
     <div class="images border">
-      <app-file-uploader label="Upload file"></app-file-uploader>
+      <app-file-uploader
+        (imagesArray)="addImages($event)"
+        label="Upload file"
+      ></app-file-uploader>
     </div>
     <p class="text-center mt-5">Choose car extras</p>
     <div class="row ml-2 ml-sm-0 pb-3">
@@ -49,11 +52,12 @@
         *ngFor="let subtask of subtasks"
         class="col-12 col-sm-6 col-md-4 col-lg-3"
       >
-        <section class="example-section">
-          <mat-checkbox color="primary" class="example-margin">{{
-            subtask.name
-          }}</mat-checkbox>
-        </section>
+        <mat-checkbox
+          color="primary"
+          (click)="setTask(subtask)"
+          value="{{ subtask }}"
+          >{{ subtask }}</mat-checkbox
+        >
       </div>
     </div>
     <app-button class="d-flex justify-content-center py-5">Create</app-button>
